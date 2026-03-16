@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Noto Serif KR', serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(251, 191, 36, 0.3);
+  border-radius: 3px;
+}
+
+.fortune-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+}
+.fortune-content th,
+.fortune-content td {
+  border: 1px solid rgba(251, 191, 36, 0.2);
+  padding: 0.5rem;
+  text-align: left;
+  font-size: 0.875rem;
+}
+.fortune-content th {
+  background: rgba(251, 191, 36, 0.1);
+  color: #FBBF24;
+}
+.fortune-content h2 {
+  display: none;
+}
+.fortune-content p {
+  margin: 0.5rem 0;
+  line-height: 1.8;
+}
+.fortune-content strong {
+  color: #FBBF24;
+}
