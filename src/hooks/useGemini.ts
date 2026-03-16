@@ -101,7 +101,7 @@ export function useGemini(): UseGeminiReturn {
     try {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({
-        model: 'gemini-2.5-pro-preview-06-05',
+        model: 'gemini-2.5-pro',
       });
 
       const userPrompt = getSystemPrompt() + '\n\n' + buildUserPrompt(input);
