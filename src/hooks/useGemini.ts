@@ -102,10 +102,9 @@ export function useGemini(): UseGeminiReturn {
       const genAI = new GoogleGenerativeAI(apiKey);
       const model = genAI.getGenerativeModel({
         model: 'gemini-1.5-pro',
-        systemInstruction: getSystemPrompt(),
       });
 
-      const userPrompt = buildUserPrompt(input);
+      const userPrompt = getSystemPrompt() + '\n\n' + buildUserPrompt(input);
       const result = await model.generateContentStream(userPrompt);
 
       let fullText = '';
